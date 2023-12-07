@@ -25,7 +25,7 @@
                                         <span>ADD</span>
                                     </a> -->
                             <!-- BUTTON RESPONSIBLE FOR TOGGLING THE ADD MODAL -->
-                            <button type="button" class="btn d-inline-flex btn-sm btn-primary mx-1" data-bs-toggle="modal" data-bs-target="#add_modal_books">
+                            <button type="button" class="btn d-inline-flex btn-sm btn-primary mx-1" data-bs-toggle="modal" data-bs-target="#add_modal_authors">
                                 <i class="bi bi-plus"></i> Add
                             </button>
                         </div>
@@ -73,7 +73,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                         </div>
                         <div class="toast-body">
-                            New Book Added
+                            New Author Added
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                         </div>
                         <div class="toast-body">
-                            Subject removed.
+                            Auhtor removed.
                         </div>
                     </div>
                 </div>
@@ -100,13 +100,13 @@
                             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                         </div>
                         <div class="toast-body">
-                            Subject updated
+                            Author updated
                         </div>
                     </div>
                 </div>
                 <!-- End TOASt -->
                 <!-- Modal Add -->
-                <div class="modal fade" id="add_modal_books" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="add_modal_authors" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -115,11 +115,11 @@
                             </div>
                             <form action="" id="frmauthors">
                                 <div class="modal-body">
-                                    <div class="form-floating mb-3">
+                                    <!-- <div class="form-floating mb-3">
                                         <input type="text" name="author_id" class="form-control" id="floatingInputAuthorID" placeholder="name@example.com">
                                         <label for="floatingInputAuthorID">Author_ID</label>
                                         <div class="text-danger" id="error_authorID"></div>
-                                    </div>
+                                    </div> -->
                                     <div class="form-floating mb-3">
                                         <input type="text" name="author_name" class="form-control" id="floatingInputAuthorName" placeholder="name@example.com">
                                         <label for="floatingInputAuthorName">Author_Name</label>
@@ -138,44 +138,22 @@
                 <!-- End Modal Add -->
 
                 <!-- Modal UPDATE -->
-                <div class="modal fade" id="edit_modal_books" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="edit_modal_authors" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Book</h1>
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Author Details</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <form action="" id="frmbookedit">
+                            <form action="" id="frmauthoredit">
                                 <div class="modal-body">
                                     <input type="hidden" name="edit_id" id="edit_id">
+                                   
                                     <div class="form-floating mb-3">
-                                        <input type="text" name="title" class="form-control" id="edit_title" placeholder="name@example.com">
-                                        <label for="floatingInputTitle">Title</label>
-                                        <div class="text-danger" id="error_title"></div>
+                                        <input type="text" name="author_name" class="form-control" id="floatingInputAuthorName" placeholder="name@example.com">
+                                        <label for="floatingInputAuthorName">Author_Name</label>
+                                        <div class="text-danger" id="error_authorName"></div>
                                     </div>
-                                    <div class="form-floating mb-3">
-                                        <input type="text" name="author_id" class="form-control" id="edit_authorID" placeholder="name@example.com">
-                                        <label for="floatingInputAuthorID">Author_ID</label>
-                                        <div class="text-danger" id="error_authorID"></div>
-                                    </div>
-
-
-                                    <div class="form-floating mb-3">
-                                        <input type="text" name="isbn" class="form-control" id="edit_isbn" placeholder="name@example.com">
-                                        <label for="floatingInputISBN">ISBN</label>
-                                        <div class="text-danger" id="error_isbn"></div>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input type="text" name="quantity" class="form-control" id="edit_qty" placeholder="name@example.com">
-                                        <label for="floatingInputQTY">Quantity</label>
-                                        <div class="text-danger" id="error_qty"></div>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input type="text" name="available_quantity" class="form-control" id="edit_availQTY" placeholder="name@example.com">
-                                        <label for="floatingInputAvailQTY">Available Quantity</label>
-                                        <div class="text-danger" id="error_availQTY"></div>
-                                    </div>
-
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -189,11 +167,11 @@
                 <!-- End Modal Update -->
 
                 <!-- Delete Modal -->
-                <div class="modal fade" id="delete_modal_subject" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="delete_modal_author" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header bg-danger">
-                                <h1 class="modal-title text-white fs-5" id="staticBackdropLabel">Delete Subject</h1>
+                                <h1 class="modal-title text-white fs-5" id="staticBackdropLabel">Delete Author</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
@@ -218,51 +196,45 @@
 <?= $this->include('layout/script.php') ?>
 <script>
     $(document).ready(function() {
-        $("#frmbooks").on("submit", function(e) {
+        $("#frmauthors").on("submit", function(e) {
             e.preventDefault();
             let formData = $(this).serialize();
 
             $.ajax({
-                url: "<?= site_url('books/add') ?>",
+                url: "<?= base_url('authors/add') ?>",
                 type: "POST",
                 data: formData,
                 dataType: "json",
                 success: function(data) {
                     if (data.error == 1) {
-                        $('#frmbooks')[0].reset();
+                        $('#frmauthors')[0].reset();
                         $("#liveToast").fadeIn();
-                        $("#myBooksTable").DataTable().ajax.reload();
+                        $("#myAuthorsTable").DataTable().ajax.reload();
                         setTimeout(function() {
                             $("#liveToast").fadeOut();
                         }, 3000);
                     } else if (data.error == 0) {
-                        $("#error_title").text(data.error_title);
-                        $("#error_authorID").text(data.error_authorID);
-                        $("#error_isbn").text(data.error_isbn);
-                        $("#error_qty").text(data.error_qty);
-                        $("#error_availQTY").text(data.error_availQTY);
-
+                        $("#error_authorName").text(data.error_author_name);
                     }
                 }
             });
         });
 
-        initializeBooksTable();
+        initializeAuthorsTable();
     });
 
-    function initializeBooksTable() {
-        $('#myBooksTable').DataTable({
+    function initializeAuthorsTable() {
+        $('#myAuthorsTable').DataTable({
             "aoColumnDefs": [{
                 "bSortable": true,
                 "aTargets": [0, 1, 2],
             }],
-
             "order": [],
             "serverSide": true,
             "searching": true,
             "lengthChange": true,
             "ajax": {
-                url: "<?= base_url('books/view') ?>",
+                url: "<?= base_url('authors/view') ?>",
                 type: 'POST'
             }
         });
@@ -277,26 +249,9 @@
 
     let row;
 
-    // function rowid(row) {
-    //     $.ajax({
-    //         url: "<?= site_url('books/view/row') ?>",
-    //         type: "post",
-    //         data: {
-    //             id: row
-    //         },
-    //         dataType: "json",
-    //         success: function(data) {
-    //             $("#edit_id").val(data.id);
-    //             $("#edit_modal_books").modal("show")
-    //             $("#edit_title").val(data.code);
-    //             $("#edit_description").val(data.description);
-
-    //         }
-    //     })
-    // }
     function rowid(row) {
     $.ajax({
-        url: "<?= site_url('books/view/row') ?>",
+        url: "<?= base_url('authors/view/row') ?>",
         type: "post",
         data: { id: row },
         dataType: "json",
@@ -324,25 +279,6 @@
 
     let upd;
 
-    // function update_data(upd) {
-    //     $.ajax({
-    //         url: "<?= site_url('books/update') ?>",
-    //         type: "post",
-    //         data: upd,
-    //         dataType: "json",
-    //         success: function(data) {
-    //             if (data.status == 1) {
-    //                 $("#update_toast").fadeIn();
-    //                 $("#myBooksTable").DataTable().ajax.reload();
-    //                 setTimeout(function() {
-    //                     $("#update_toast").fadeOut();
-    //                 }, 3000)
-    //             } else {
-    //                 alert("Something wrong")
-    //             }
-    //         }
-    //     })
-    // }
     function update_data(upd) {
     $.ajax({
         url: "<?= site_url('books/update') ?>",
@@ -376,7 +312,7 @@
 
     function deleteId(rowD) {
     $.ajax({
-        url: "<?= site_url('books/delete') ?>",
+        url: "<?= site_url('authors/delete') ?>",
         type: "post",
         data: { id: rowD },
         dataType: "json",

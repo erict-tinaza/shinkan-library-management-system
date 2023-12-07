@@ -8,3 +8,13 @@ in SYSTEMPATH/Model.php on line 380.
  6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
  7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
  8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/public/index.php')
+CRITICAL - 2023-12-07 11:56:40 --> Undefined array key "authorID"
+in VENDORPATH/monken/tablesigniter/src/TablesIgniter.php on line 188.
+ 1 VENDORPATH/monken/tablesigniter/src/TablesIgniter.php(188): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 VENDORPATH/monken/tablesigniter/src/TablesIgniter.php(252): monken\TablesIgniter->getOutputData()
+ 3 APPPATH/Controllers/AuthorController.php(24): monken\TablesIgniter->getDatatable()
+ 4 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\AuthorController->create()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/jhann.erict.c.tinaza/Documents/Tinaza_j/shinkan-library-management-system/public/index.php')

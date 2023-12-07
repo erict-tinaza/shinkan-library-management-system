@@ -22,3 +22,9 @@ $routes->post('books/view', "BooksController::create");
 $routes->post('books/view/row', "BooksController::books_row");
 $routes->post('books/delete', "BooksController::delete");
 $routes->post('books/update', "BooksController::update");
+
+$routes->post("authors/add", "AuthorController::store");
+$routes->post("authors/view", "AuthorController::create");
+$routes->post("authors/view/row", "AuthorController::author_row");
+$routes->post("authors/delete", "AuthorController::delete");
+$routes->post("authors/update", "AuthorController::update");

@@ -38,4 +38,22 @@ class Authors extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function noticeTable()
+    {
+        $builder = $this->db->table("authors");
+        return $builder;
+    }
+    public function button()
+    {
+        $button = function ($row) {
+            return
+                "
+                <button class='btn btn-warning edit' data-id='" . $row['author_id'] . "'><i class='fa fa-pen'></i></button>
+                <button class='btn btn-danger delete' data-id='" . $row['author_id'] . "'><i class='fa fa-trash'></i></button>
+            ";
+        };
+        return $button;
+    }
 }
+
