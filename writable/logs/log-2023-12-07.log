@@ -1,0 +1,10 @@
+CRITICAL - 2023-12-07 09:22:56 --> Updates are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH/Model.php on line 380.
+ 1 SYSTEMPATH/BaseModel.php(949): CodeIgniter\Model->doUpdate()
+ 2 SYSTEMPATH/Model.php(776): CodeIgniter\BaseModel->update()
+ 3 APPPATH/Controllers/BooksController.php(113): CodeIgniter\Model->update()
+ 4 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\BooksController->update()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/public/index.php')

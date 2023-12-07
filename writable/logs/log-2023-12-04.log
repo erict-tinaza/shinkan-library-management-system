@@ -1,0 +1,84 @@
+ERROR - 2023-12-04 14:37:35 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MySQLi/Connection.php:184
+Stack trace:
+#0 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MySQLi/Connection.php(184): mysqli->real_connect()
+#1 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/BaseConnection.php(1410): CodeIgniter\Database\BaseConnection->query()
+#4 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/BaseConnection.php(1429): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MigrationRunner.php(764): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MigrationRunner.php(168): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Commands/Database/Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\Migrate->run()
+#9 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/CLI/Console.php(46): CodeIgniter\CLI\Commands->run()
+#10 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/BaseConnection.php(1410): CodeIgniter\Database\BaseConnection->query()
+#3 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/BaseConnection.php(1429): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MigrationRunner.php(764): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MigrationRunner.php(168): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Commands/Database/Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\Migrate->run()
+#8 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/CLI/Console.php(46): CodeIgniter\CLI\Commands->run()
+#9 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/spark(102): CodeIgniter\CLI\Console->run()
+#10 {main}
+ERROR - 2023-12-04 14:41:18 --> mysqli_sql_exception: Incorrect table definition; there can be only one auto column and it must be defined as a key in /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/Forge.php(546): CodeIgniter\Database\BaseConnection->query()
+#4 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/app/Database/Migrations/2023-12-04-124453_CreateBooksTable.php(49): CodeIgniter\Database\Forge->createTable()
+#5 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MigrationRunner.php(873): App\Database\Migrations\CreateBooksTable->up()
+#6 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate()
+#7 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Commands/Database/Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\Migrate->run()
+#9 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/CLI/Console.php(46): CodeIgniter\CLI\Commands->run()
+#10 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-12-04 14:58:46 --> mysqli_sql_exception: Failed to open the referenced table 'authors' in /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/Forge.php(546): CodeIgniter\Database\BaseConnection->query()
+#4 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/app/Database/Migrations/2023-12-04-124453_CreateBooksTable.php(43): CodeIgniter\Database\Forge->createTable()
+#5 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MigrationRunner.php(873): App\Database\Migrations\CreateBooksTable->up()
+#6 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate()
+#7 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Commands/Database/Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\Migrate->run()
+#9 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/CLI/Console.php(46): CodeIgniter\CLI\Commands->run()
+#10 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-12-04 15:09:17 --> mysqli_sql_exception: Failed to open the referenced table 'authors' in /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/Forge.php(546): CodeIgniter\Database\BaseConnection->query()
+#4 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/app/Database/Migrations/2023-12-04-124453_CreateBooksTable.php(43): CodeIgniter\Database\Forge->createTable()
+#5 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MigrationRunner.php(873): App\Database\Migrations\CreateBooksTable->up()
+#6 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate()
+#7 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Commands/Database/Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\Migrate->run()
+#9 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/CLI/Console.php(46): CodeIgniter\CLI\Commands->run()
+#10 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-12-04 15:10:32 --> mysqli_sql_exception: Referencing column 'author_id' and referenced column 'author_id' in foreign key constraint 'books_author_id_foreign' are incompatible. in /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MySQLi/Connection.php:306
+Stack trace:
+#0 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MySQLi/Connection.php(306): mysqli->query()
+#1 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/Forge.php(546): CodeIgniter\Database\BaseConnection->query()
+#4 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/app/Database/Migrations/2023-12-04-151016_BooksTable.php(43): CodeIgniter\Database\Forge->createTable()
+#5 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MigrationRunner.php(873): App\Database\Migrations\CreateBooksTable->up()
+#6 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Database/MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate()
+#7 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/Commands/Database/Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\Migrate->run()
+#9 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/system/CLI/Console.php(46): CodeIgniter\CLI\Commands->run()
+#10 /home/jhann.erict.c.tinaza/Documents/Tinaza_j/Library_management_system/spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}

@@ -1,0 +1,10 @@
+INSERT INTO authors(author_name)
+VALUES ('Mei Hachimoku');
+The Tunnel to Summer, The Exit of Goodbyes
+978-1-63858-415-5
+
+
+INSERT INTO books(title, author_id, ISBN, quantity, available_quantity)
+VALUES ('The Tunnel to Summer, The Exit of Goodbyes', 1, '978-1-63858-415-5', 2, 2 );
+The Tunnel to Summer, The Exit of Goodbyes
+978-1-63858-415-5
