@@ -13,11 +13,11 @@ class LibrarianUIController extends BaseController
     }
     public function books()
     {
-        return view('librarian/dashboard.php');
+        return view('librarian/books.php');
     }
     public function authors()
     {
-        return view('librarian/dashboard.php');
+        return view('librarian/authorsView.php');
     }
     public function transactions()
     {

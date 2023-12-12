@@ -311,7 +311,7 @@
     //             $("#edit_id").val(data.id);
     //             $("#edit_modal_books").modal("show")
     //             $("#edit_title").val(data.code);
-    //             $("#edit_description").val(data.description);
+    //             $("#edit_authorName").val(data.description);
 
     //         }
     //     })

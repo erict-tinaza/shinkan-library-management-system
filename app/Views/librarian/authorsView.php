@@ -105,25 +105,21 @@
                     </div>
                 </div>
                 <!-- End TOASt -->
+
                 <!-- Modal Add -->
                 <div class="modal fade" id="add_modal_authors" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Author</h1>
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Author</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <form action="" id="frmauthors">
+                            <form action="" id="frmauthor">
                                 <div class="modal-body">
-                                    <!-- <div class="form-floating mb-3">
-                                        <input type="text" name="author_id" class="form-control" id="floatingInputAuthorID" placeholder="name@example.com">
-                                        <label for="floatingInputAuthorID">Author_ID</label>
-                                        <div class="text-danger" id="error_authorID"></div>
-                                    </div> -->
                                     <div class="form-floating mb-3">
-                                        <input type="text" name="author_name" class="form-control" id="floatingInputAuthorName" placeholder="name@example.com">
-                                        <label for="floatingInputAuthorName">Author_Name</label>
-                                        <div class="text-danger" id="error_authorName"></div>
+                                        <input type="text" name="author_name" class="form-control" id="floatingPassword" placeholder="Password">
+                                        <label for="floatingPassword">Author Name</label>
+                                        <div class="text-danger" id="error_author_name"></div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -137,41 +133,38 @@
                 </div>
                 <!-- End Modal Add -->
 
-                <!-- Modal UPDATE -->
                 <div class="modal fade" id="edit_modal_authors" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Author Details</h1>
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Author</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form action="" id="frmauthoredit">
                                 <div class="modal-body">
-                                    <input type="hidden" name="edit_id" id="edit_id">
-                                   
+                                    <input type="text" name="edit_id" id="edit_id" aria-valuetext="">
                                     <div class="form-floating mb-3">
-                                        <input type="text" name="author_name" class="form-control" id="floatingInputAuthorName" placeholder="name@example.com">
-                                        <label for="floatingInputAuthorName">Author_Name</label>
-                                        <div class="text-danger" id="error_authorName"></div>
+                                        <input type="text" name="author_name" class="form-control" id="edit_author_name" placeholder="name@example.com">
+                                        <label for="floatingInput">Author Name</label>
+                                        <div class="text-danger" id="error_author_name"></div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary update" data-bs-dismiss="modal">Save Changes</button>
-
                                 </div>
                             </form>
+
                         </div>
                     </div>
                 </div>
                 <!-- End Modal Update -->
-
                 <!-- Delete Modal -->
-                <div class="modal fade" id="delete_modal_author" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="delete_modal_authors" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header bg-danger">
-                                <h1 class="modal-title text-white fs-5" id="staticBackdropLabel">Delete Author</h1>
+                                <h1 class="modal-title text-white fs-5" id="staticBackdropLabel">Delete Subject</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
@@ -191,44 +184,46 @@
             </div>
     </main>
 </div>
-</div>
+
 </body>
 <?= $this->include('layout/script.php') ?>
 <script>
     $(document).ready(function() {
-        $("#frmauthors").on("submit", function(e) {
+        $("#frmauthor").on("submit", function(e) {
             e.preventDefault();
-            let formData = $(this).serialize();
-
+            let a = $(this).serialize();
             $.ajax({
-                url: "<?= base_url('authors/add') ?>",
+                url: "<?= site_url('authors/add') ?>",
                 type: "POST",
-                data: formData,
+                data: a,
                 dataType: "json",
                 success: function(data) {
                     if (data.error == 1) {
-                        $('#frmauthors')[0].reset();
+                        $('#frmauthor')[0].reset();
                         $("#liveToast").fadeIn();
                         $("#myAuthorsTable").DataTable().ajax.reload();
                         setTimeout(function() {
                             $("#liveToast").fadeOut();
-                        }, 3000);
+                        }, 3000)
                     } else if (data.error == 0) {
-                        $("#error_authorName").text(data.error_author_name);
+                        $("#error_author_name").text(data.error_author_name);
                     }
                 }
-            });
-        });
+            })
 
-        initializeAuthorsTable();
-    });
+        })
 
-    function initializeAuthorsTable() {
+        initializeTable();
+
+    })
+
+    function initializeTable() {
         $('#myAuthorsTable').DataTable({
             "aoColumnDefs": [{
                 "bSortable": true,
                 "aTargets": [0, 1, 2],
             }],
+
             "order": [],
             "serverSide": true,
             "searching": true,
@@ -241,94 +236,102 @@
     }
 </script>
 
+
+
+
 <script>
     $(document).on("click", ".edit", function() {
         let a = $(this).data('id');
+        alert(a)
         rowid(a);
+        // console.log(a)
     })
 
-    let row;
-
     function rowid(row) {
-    $.ajax({
-        url: "<?= base_url('authors/view/row') ?>",
-        type: "post",
-        data: { id: row },
-        dataType: "json",
-        success: function(data) {
-            $("#edit_id").val(data.book_id);
-            $("#edit_modal_books").modal("show");
-            $("#edit_title").val(data.title);
-            $("#edit_authorID").val(data.author_id);
-            $("#edit_isbn").val(data.isbn);
-            $("#edit_qty").val(data.quantity);
-            $("#edit_availQTY").val(data.available_quantity);
-        }
-    });
-}
+        $.ajax({
+            url: "<?= site_url('authors/view/row') ?>",
+            type: "post",
+            data: {
+                id: row
+            },
+            dataType: "json",
+            success: function(data) {
+                $("#edit_id").val(row);
+                $("#edit_modal_authors").modal("show")
+                $("#edit_author_name").val(data.author_name);
 
+            }
+        })
+    }
 </script>
 <script>
     $(document).ready(function() {
-        $("#frmbookedit").submit(function(e) {
+        $("#frmauthoredit").submit(function(e) {
             e.preventDefault()
             let a = $(this).serialize();
             update_data(a)
+            // alert("2: "+a)
         })
     })
 
-    let upd;
+    // let upd;
 
     function update_data(upd) {
-    $.ajax({
-        url: "<?= site_url('books/update') ?>",
-        type: "post",
-        data: upd,
-        dataType: "json",
-        success: function(data) {
-            if (data.status == 1) {
-                $("#update_toast").fadeIn();
-                $("#myBooksTable").DataTable().ajax.reload();
-                setTimeout(function() {
-                    $("#update_toast").fadeOut();
-                }, 3000);
-            } else {
-                alert("Something wrong");
+       
+        $.ajax({
+            url: "<?= site_url('authors/update') ?>",
+            type: "post",
+            data: upd,
+            dataType: "json",
+            success: function(data) {
+                alert("3: "+upd)
+                if (data.status == 1) {
+                    $("#update_toast").fadeIn();
+                    $("#myAuthorsTable").DataTable().ajax.reload();
+                    setTimeout(function() {
+                        $("#update_toast").fadeOut();
+                    }, 3000)
+                } else {
+                    alert("Something wrong")
+                }
             }
-        }
-    });
-}
+        })
+    }
 </script>
 <script>
     $(document).on("click", ".delete", function() {
-        $("#delete_modal_subject").modal("show")
+        $("#delete_modal_authors").modal("show")
         let id = $(this).data('id');
         let del = $(".confirm_delete").click(function() {
             deleteId(id)
+            console.log(id)
         })
     });
 
-    let rowD;
+    // let rowD;
 
     function deleteId(rowD) {
-    $.ajax({
-        url: "<?= site_url('authors/delete') ?>",
-        type: "post",
-        data: { id: rowD },
-        dataType: "json",
-        success: function(data) {
-            if (data.status == 1) {
-                $("#delete_toast").fadeIn();
-                $("#myBooksTable").DataTable().ajax.reload();
-                setTimeout(function() {
-                    $("#delete_toast").fadeOut();
-                }, 3000);
-            } else {
-                alert("Something wrong");
+        console.log('a' + rowD)
+        $.ajax({
+            url: "<?= base_url('authors/delete') ?>",
+            type: "post",
+            data: {
+                id: rowD
+            },
+            dataType: "json",
+            success: function(data) {
+                if (data.status == 1) {
+                    $("#delete_toast").fadeIn();
+                    $("#myAuthorsTable").DataTable().ajax.reload();
+                    setTimeout(function() {
+                        $("#delete_toast").fadeOut();
+                    }, 3000)
+                } else {
+                    alert("something wrong");
+                }
             }
-        }
-    });
-}
+        })
+    }
 </script>
 
 </html>

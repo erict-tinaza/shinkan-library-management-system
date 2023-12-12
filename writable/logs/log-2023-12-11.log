@@ -1,0 +1,10 @@
+CRITICAL - 2023-12-11 07:11:14 --> Deletes are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH/Database/BaseBuilder.php on line 2766.
+ 1 SYSTEMPATH/Model.php(445): CodeIgniter\Database\BaseBuilder->delete()
+ 2 SYSTEMPATH/BaseModel.php(1080): CodeIgniter\Model->doDelete()
+ 3 APPPATH/Controllers/AuthorController.php(89): CodeIgniter\BaseModel->delete()
+ 4 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\AuthorController->delete()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/home/jhann.erict.c.tinaza/Documents/Tinaza_j/shinkan-library-management-system/public/index.php')

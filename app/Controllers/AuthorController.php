@@ -18,7 +18,7 @@ class AuthorController extends BaseController
         $model = new Authors();
         $table = new TablesIgniter();
         $table->setTable($model->noticeTable())
-            ->setOrder([null, "author_name", null])
+            ->setOrder([null, "author_name"])
             ->setSearch(["author_id", "author_name"])
             ->setOutput(["author_id", "author_name", $model->button()]);
         return $table->getDatatable();
@@ -71,21 +71,23 @@ class AuthorController extends BaseController
         $model = new Authors();
         $id = $this->request->getVar('edit_id');
         $data = [
-            'author_name' => $this->request->getVar('author_name'),
+            'author_name' => $this->request->getVar('author_name')
         ];
-
-        if ($model->update($id, $data)) {
-            echo json_encode(array("status" => 1));
-        } else {
-            echo json_encode(array("status" => 0));
+        if($model->update($id, $data)){
+            echo json_encode(array("status"=>1));
+        }else{
+            echo json_encode(array("status"=>0));
         }
     }
+        
+    
 
     public function delete()
     {
         $model = new Authors();
         $id = $this->request->getVar('id');
         if ($model->delete($id)) {
+            
             echo json_encode(array("status" => 1));
         } else {
             echo json_encode(array("status" => 0));

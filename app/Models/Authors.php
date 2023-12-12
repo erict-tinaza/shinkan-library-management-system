@@ -8,7 +8,7 @@ use CodeIgniter\Model;
 class Authors extends Model
 {
     protected $table            = 'authors';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'author_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;

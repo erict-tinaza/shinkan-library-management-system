@@ -7,6 +7,8 @@ use CodeIgniter\Router\RouteCollection;
  */
 // $routes->get('/', 'Home::index');
 $routes->get('/', 'LibrarianUIController::index');
+$routes->get('books', 'LibrarianUIController::books');
+$routes->get('authors', 'LibrarianUIController::authors');
 // $routes->get("books/index","BooksController::index");
 
 // $routes->get('books/create', 'BooksController::create');
@@ -25,6 +27,6 @@ $routes->post('books/update', "BooksController::update");
 
 $routes->post("authors/add", "AuthorController::store");
 $routes->post("authors/view", "AuthorController::create");
-$routes->post("authors/view/row", "AuthorController::author_row");
+$routes->post("authors/view/row", "AuthorController::authors_row");
 $routes->post("authors/delete", "AuthorController::delete");
 $routes->post("authors/update", "AuthorController::update");

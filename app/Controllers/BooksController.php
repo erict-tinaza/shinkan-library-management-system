@@ -26,7 +26,7 @@ class BooksController extends BaseController
             ->setOutput(["book_id", "title", "author_id", "ISBN", "quantity", "available_quantity", $model->button()]);
         return $table->getDatatable();
     }
-
+    
     public function books_row()
     {
         $model = new Books();
@@ -77,7 +77,7 @@ class BooksController extends BaseController
             $data = [
                 'title' => $this->request->getVar('title'),
                 'author_id' => $this->request->getVar('author_id'),
-                'isbn' => $this->request->getVar('isbn'),
+                'ISBN' => $this->request->getVar('isbn'),
                 'quantity' => $this->request->getVar('quantity'),
                 'available_quantity' => $this->request->getVar('available_quantity')
             ];
@@ -106,7 +106,7 @@ class BooksController extends BaseController
         $data = [
             'title' => $this->request->getVar('title'),
                 'author_id' => $this->request->getVar('author_id'),
-                'isbn' => $this->request->getVar('isbn'),
+                'ISBN' => $this->request->getVar('isbn'),
                 'quantity' => $this->request->getVar('quantity'),
                 'available_quantity' => $this->request->getVar('available_quantity')
         ];
